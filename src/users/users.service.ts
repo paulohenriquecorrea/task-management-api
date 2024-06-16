@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
-import { UserDto } from './user.dto';
 import {v4 as uuid} from 'uuid';
+import { UserDto } from './user.dto';
 import { hashSync as bcryptHashSync } from 'bcrypt';
 
 @Injectable()
