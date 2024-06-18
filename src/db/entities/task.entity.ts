@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class TaskEntity {
 
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    id?: string;
 
     @Column({ type: 'varchar'})
     title: string;
@@ -17,7 +17,7 @@ export class TaskEntity {
     status: string;
 
     @Column({ type: 'timestamptz', name: 'expiration_date'})
-    expiration: Date;
+    expirationDate: Date;
 
 
 }
