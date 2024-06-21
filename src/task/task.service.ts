@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { HttpException, HttpStatus, Injectable, Query } from '@nestjs/common';
-import { v4 as uuid } from 'uuid';
+import { HttpException, HttpStatus, Injectable} from '@nestjs/common';
 import { FindAllParameters, TaskDto, TaskStatusEnum } from './task.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TaskEntity } from 'src/db/entities/task.entity';
@@ -13,9 +12,6 @@ export class TaskService {
     @InjectRepository(TaskEntity)
     private readonly taskRepository: Repository<TaskEntity>
   ) {}
-
-
-  private tasks: TaskDto[] = [];
 
   async create(task: TaskDto) {
     const taskToSave: TaskEntity = {
